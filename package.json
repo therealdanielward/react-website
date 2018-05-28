@@ -1,0 +1,27 @@
+{
+  "name": "react-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -development && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "build:prod": "webpack -production && copy src/index.html dist/index.html "
+  },
+  "author": "Daniel Ward",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^4.8.3"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
+  }
+}
