@@ -22,8 +22,10 @@ export class Home extends React.Component {
     });
   }
 
-  onChangeLink() {
-    this.props.homeLink(this.state.homeLink);
+  onChangeLink(newName) {
+    this.setState({
+      homeLink: newName
+    });
   }
 
   onHandleChange() {
@@ -59,7 +61,7 @@ export class Home extends React.Component {
           value={this.state.onChangeLink}
           onChange={event => this.onHandleChange(event)}
         />
-        <button onClick={() => this.onChangeLink} className="btn btn-primary">
+        <button onClick={event => this.onChangeLink(event.homeLink)} className="btn btn-primary">
           Change Header Link
         </button>
       </div>

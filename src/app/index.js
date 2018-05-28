@@ -3,6 +3,7 @@ import { render } from "react-dom";
 
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,17 +32,21 @@ class App extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
+          <ErrorBoundary>
             <Header homeLink={this.state.homeLink}/>
+            </ErrorBoundary>
           </div>
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
+          <ErrorBoundary>
             <Home
               name={"Max"}
               initialAge={28}
               greet={this.onGreet}
               changeLink={() => this.onChangeLinkName(this.state.homeLink)}
             />
+            </ErrorBoundary>
           </div>
         </div>
       </div>
