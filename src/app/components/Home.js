@@ -23,7 +23,7 @@ export class Home extends React.Component {
   }
 
   onChangeLink() {
-    this.props.changeLink(this.state.homeLink);
+    this.props.homeLink(this.state.homeLink);
   }
 
   onHandleChange() {
@@ -56,7 +56,7 @@ export class Home extends React.Component {
         <hr />
         <input
           type="text"
-          value={this.state.homeLink}
+          value={this.state.onChangeLink}
           onChange={event => this.onHandleChange(event)}
         />
         <button onClick={() => this.onChangeLink} className="btn btn-primary">
