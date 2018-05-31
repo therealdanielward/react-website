@@ -11,9 +11,11 @@
   "author": "Daniel Ward",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^1.1.0",
     "eslint": "^4.19.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-springy-parallax": "^1.3.0",
     "webpack": "^4.8.3",
     "webpack-dev-server": "^3.1.4"
   },

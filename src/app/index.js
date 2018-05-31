@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+import Parallax from "react-springy-parallax";
 
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
@@ -29,24 +30,21 @@ class App extends React.Component {
       return <h1>Something went wrong</h1>;
     }
     return (
+
       <div className="container">
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-          <ErrorBoundary>
-            <Header homeLink={this.state.homeLink}/>
-            </ErrorBoundary>
+            <Header homeLink={this.state.homeLink} />
           </div>
         </div>
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-          <ErrorBoundary>
             <Home
               name={"Max"}
               initialAge={28}
               greet={this.onGreet}
               changeLink={() => this.onChangeLinkName(this.state.homeLink)}
             />
-            </ErrorBoundary>
           </div>
         </div>
       </div>
@@ -54,4 +52,9 @@ class App extends React.Component {
   }
 }
 
-render(<App />, window.document.getElementById("app"));
+render(
+  <ErrorBoundary>
+    <App />
+  </ErrorBoundary>,
+  window.document.getElementById("app")
+);

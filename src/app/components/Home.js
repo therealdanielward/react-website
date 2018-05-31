@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 export class Home extends React.Component {
   constructor(props) {
@@ -39,31 +41,36 @@ export class Home extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-xs-10 col-xs-offset-1">
-            <h1>
+            <h1 className="mdc-typography--headline1">
               Hello {this.props.name} you are {this.state.age}
             </h1>
             <p>Status: {this.state.status}</p>
-            <button
-              className="btn btn-primary"
+            <Button
+              variant="raised"
+              color="primary"
               onClick={() => this.onMakeOlder()}
             >
               Make me older!
-            </button>
+            </Button>
           </div>
         </div>
         <hr />
-        <button className="btn btn-primary" onClick={this.props.greet}>
+        <Button variant="raised" color="primary" onClick={this.props.greet}>
           Greet
-        </button>
+        </Button>
         <hr />
-        <input
+        <TextField
           type="text"
           value={this.state.onChangeLink}
           onChange={event => this.onHandleChange(event)}
         />
-        <button onClick={event => this.onChangeLink(event.homeLink)} className="btn btn-primary">
+        <Button
+          onClick={event => this.onChangeLink(event.homeLink)}
+          variant="raised"
+          color="primary"
+        >
           Change Header Link
-        </button>
+        </Button>
       </div>
     );
   }
